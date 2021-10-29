@@ -1,0 +1,265 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+ 
+
+body {
+    background-color: #24272E;
+}
+
+header  {
+    background: #24272E;
+    padding: 20px;
+    color: white;
+
+}
+
+header > h1 {
+    color: black;
+    text-align: left;
+    font-size: 25px;
+    font-family: Asap, sans-serif;
+    height: 20px;
+    padding: 0px 0px 0px 0px;
+    color: white;
+}
+
+.score-board {
+    margin: 20px auto;
+    border: 3px solid white;
+    border-radius: 4px;
+    text-align:center;
+    width:200px;
+    color:white;
+    font-size: 46px;
+    padding: 15px 20px;
+    font-family: Asap, sans-serif;
+    position: relative;
+}
+
+.badge{
+    background: #A4100E;
+    color: white;
+    font-size: 14px;
+    padding: 2px;
+}
+
+#user-label {
+    position: absolute;
+    top: 30px;
+    left: -20px;
+}
+
+#computer-label {
+    position: absolute;
+    top: 30px;
+    right: -20px;
+}
+
+#button2 {
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    top: 60px;
+    left: 1024px;    
+    background:gray;
+    font-family: Asap, sans-serif;
+    text-align: right;
+    font-weight: bold;
+    margin: 0px 0px;
+    width: 300px;
+}
+
+
+#button1 {
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    top: 50px;
+    left: 20px;    
+    background:gray;
+    font-family: Asap, sans-serif;
+    text-align: left;
+    font-weight: bold;
+    width: 400px;
+    height : 28px;
+    margin: 10px 0px;
+}
+
+
+#panel1 {
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    top: 110px;
+    left: 1024px;    
+    background:gray;
+    font-family: Asap, sans-serif;
+    text-align: right;
+    margin: 0px 0px;
+    padding: 10px 10px;
+    width: 300px;
+    display: block;
+}
+
+#panel2 {
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    top: 110px;
+    left: 1024px;    
+    background:gray;
+    font-family: Asap, sans-serif;
+    text-align: right;
+    margin: 0px 0px;
+    padding: 10px 10px;
+    width: 300px;    
+    display: none;
+}
+
+
+#panel3 {
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    top: 110px;
+    left: 1024px;    
+    background:gray;
+    font-family: Asap, sans-serif;
+    text-align: right;
+    margin: 0px 0px;
+    padding: 10px 10px;
+    width: 300px;    
+    display: none;
+}
+
+
+#panel4 {
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    top: 110px;
+    left: 1024px;    
+    background:gray;
+    font-family: Asap, sans-serif;
+    text-align: right;
+    margin: 0px 0px;
+    padding: 10px 10px;
+    width: 300px;    
+    display: none;
+}
+
+
+#panel5 {
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    top: 110px;
+    left: 1024px;    
+    background:gray;
+    font-family: Asap, sans-serif;
+    text-align: right;
+    margin: 0px 0px;
+    padding: 10px 10px;
+    width: 300px;    
+    display: none;
+}
+
+
+
+
+
+
+#clock {
+    font-size: 30px;
+    position: absolute;
+    top: 100px;
+    left: 20px;   
+    width:980px;
+    height:650px;
+    color: white;
+    background:gray;
+    font-family: Asap, sans-serif;
+    text-align: right;
+    font-weight: bold;
+    margin: 0px 0px;
+}
+
+#bottombar {
+    font-size: 9px;
+    position: absolute;
+    top: 760px;
+    left: 20px;   
+    width:980px;
+    color:#FFE500;
+    background:black;
+    font-family: Asap, sans-serif;
+    text-align: left;
+    margin: 0px 0px;
+}
+
+.choices {
+   margin: 50px 0;
+   text-align: center; 
+}
+
+.choice {
+    display: inline-block;
+    border: 4px solid white;
+    border-radius: 50% ;
+    margin: 0 5px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+#action {
+    text-align: center;
+    color:white;
+    font-family: Asap, sans-serif;
+    font-weight: bold;
+    font-size :20px;
+}
+
+
+.slidecontainer {
+    position: absolute;
+    width: 400px;
+    top: 60px;
+    left: 450px;  
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;  
+    background: #ffffff;
+    outline: none;
+    opacity: 1.0;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #ffbb00;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ffbb00;
+    cursor: pointer;
+  }

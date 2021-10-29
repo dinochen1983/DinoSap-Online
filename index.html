@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DinoSap online</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+
+<body>
+
+<header>
+    <h1>
+        <a href="http://dinochen.com" target="_blank"><img src="http://dinochen.com/images/logo2.png" alt="" /></a>&nbsp;DinoSap online <span style="color:#FFE500;font-size:9px;"><a href="http://dinochen.com" target="_blank"><span style="color:#FFE500;">(dinochen.com)</span></a></span> 
+    </h1>
+</header>
+
+<div class="slidecontainer">
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+</div>
+
+
+<div class="button1">
+    <div id="button1">
+        <button type="button" onclick="clearModel()">Clear</button>
+        <button type="button" onclick="calculation_force(0)">Model</button>
+        <button type="button" onclick="calculation_force(1)">Moment</button>
+        <button type="button" onclick="calculation_force(2)">Shear</button>
+        <button type="button" onclick="calculation_force(3)">Axial</button>
+        <button type="button" onclick="checkFrame()">CheckFrame</button>
+    </div>
+
+</div>
+
+<div class="button2">
+    <div id="button2">
+        <button type="button" onclick="showPanel(1)">Node</button>
+        <button type="button" onclick="showPanel(2)">Mat</button>
+        <button type="button" onclick="showPanel(3)">Frame</button>
+        <button type="button" onclick="showPanel(4)">Sup</button>
+        <button type="button" onclick="showPanel(5)">Load</button>
+    </div>
+</div>
+
+
+<div class="panel1">
+    <div id="panel1">
+        Node information<br><br>  
+        <label >Num:</label>
+        <input type="text" id="node_num" name="fname" size =5><br><br>  
+        <label >x:</label>
+        <input type="text" id="node_px" name="fname" size =5><br><br>  
+        <label >y:</label>
+        <input type="text" id="node_py" name="fname" size =5><br><br>   
+
+        <button type="button" onclick="ChangeOperation(1)">Add</button>
+        <button type="button" onclick="ChangeOperation(2)">Select</button>
+        <button type="button" onclick="modifyNode()">Modify</button>
+        <button type="button" onclick="deleteNode()">Delete</button>
+    </div>
+</div>
+
+<div class="panel2">
+    <div id="panel2">
+        Material information<br><br>  
+
+       <select name="sel_mats" size="8"  style="width: 120px;" onchange="selectMat(this);">
+            <option value="0"> green </option>
+            <option value="1"> orange </option>
+            <option value="2"> yellow </option>
+            <option value="3"> red </option>
+            <option value="4"> aqua </option>
+            <option value="5"> blue </option>
+            <option value="6"> purple </option>
+            <option value="7"> fuchsia </option>
+        </select><br>  <br> 
+
+        <label>Num:</label>
+        <input type="text" id="mat_num" name="fname" size =5><br><br>  
+        <label>Color:</label>
+        <input type="text" id="mat_color" name="fname" size =5><br><br>  
+        <label>E Value:</label>
+        <input type="text" id="mat_ee" name="fname" size =5><br><br>  
+        <label>Area:</label>
+        <input type="text" id="mat_aa" name="fname" size =5><br><br>           
+        <label>Moment Iz:</label>
+        <input type="text" id="mat_ii" name="fname" size =5><br><br>   
+
+        <button type="button" onclick="modifyMat()">Modify</button>
+
+    </div>
+</div>
+
+<div class="panel3">
+    <div id="panel3">
+        Frame information<br><br>  
+        <label>Num:</label>
+        <input type="text" id="frame_num" name="fname" size =5><br><br>  
+        <label>Start Point:</label>
+        <input type="text" id="frame_p1" name="fname" size =5><br><br>  
+        <label>End Point:</label>
+        <input type="text" id="frame_p2" name="fname" size =5><br><br> 
+
+        <label>Choose Mat:</label>
+        <select name="mats" id="frame_mat">
+          <option value="0">green</option>
+          <option value="1">orange</option>
+          <option value="2">yellow</option>
+          <option value="3">red</option>
+          <option value="4">aqua</option>
+          <option value="5">blue</option> 
+          <option value="6">purple</option> 
+          <option value="7">fuchsia</option>          
+        </select>
+        <br><br>
+        <button type="button" onclick="ChangeOperation(3)">Add</button>
+        <button type="button" onclick="ChangeOperation(5)">Select</button>
+        <button type="button" onclick="modifyFrame()">Modify</button>
+        <button type="button" onclick="deleteFrame()">Delete</button>    
+    </div>
+</div>
+
+<div class="panel4">
+    <div id="panel4">
+        Support information<br><br>  
+        <label>Num:</label>
+        <input type="text" id="sup_num" name="fname" size =5><br><br>  
+        <input type="text" id="sup_node" name="fname" size =5><br><br>  
+
+        <label>Choose Sup:</label>
+        <select name="sup_type" id="sup_type" style="width: 100px;">
+          <option value="0">pin</option>       <!--stype-->
+          <option value="1">x-roller</option> 
+          <option value="2">y-roller</option> 
+          <option value="3">fix</option>       
+        </select><br><br>
+
+        <label>Choose Ang:</label>
+        <select name="sup_ang" id="sup_ang">
+          <option value="1">normal</option>
+          <option value="2">flip</option>   
+        </select><br><br>
+
+
+        <button type="button" onclick="ChangeOperation(6)">Add</button>
+        <button type="button" onclick="ChangeOperation(7)">Select</button>
+        <button type="button" onclick="modifySupport()">Modify</button>
+        <button type="button" onclick="deleteSupport()">Delete</button>    
+    </div>
+</div>
+
+
+<div class="panel5">
+    <div id="panel5">
+        Load information<br><br>  
+
+
+        <select name="elemLoads"  id="elemLoads" size="7"  style="width: 180px;" onchange="selectLoad(this)">
+        </select><br><br> 
+
+
+        <label>Num:</label>
+        <input type="text" id="load_num" name="fname" size =5><br><br> 
+
+        <label>Choose Type:</label>
+        <select name="load_type" id="load_type" style="width: 125px;" >
+          <option value="0">Frame UDL</option>
+          <option value="1">Frame PointLoad</option>
+          <option value="2">Node PointLoad</option>
+          <option value="3">Node Moment</option>  
+        </select><br><br>
+
+
+        <label>Node/Frame:</label>
+        <input type="text" id="load_name" name="fname" size =5><br><br>   
+
+        <label>Start Point:</label>
+        <input type="text" id="load_loc1" name="fname" size =5 value="0.0"><br><br>  
+        <label>End Point:</label>
+        <input type="text" id="load_loc2" name="fname" size =5 value="1.0"><br><br> 
+
+        <label>Start Value:</label>
+        <input type="text" id="load_v1" name="fname" size =5 value="10.0"><br><br>  
+        <label>End Value:</label>
+        <input type="text" id="load_v2" name="fname" size =5 value="10.0"><br><br>  
+        <label>Load Angle:</label>
+        <input type="text" id="load_ang" name="fname" size =5 value="90"> <br><br>  
+
+        <button type="button" onclick="ChangeOperation(8)">Add</button>
+        <button type="button" onclick="modifyLoad()">modify</button>
+        <button type="button" onclick="deleteLoad()">delete</button>    
+    </div>
+</div>
+
+
+
+
+<div class="bottombar">
+    <div id="bottombar">
+        none<br>    
+    </div>
+</div>
+
+<div class="clock" onmousedown="showCoords(event)">
+
+        
+        <canvas id = "clock" height = "650px" width = "980px"  >
+        </canvas>
+        <script type="text/javascript", src = "index1.js"></Script>
+
+        
+</div>
+
+</body>
+
+
+</html>
